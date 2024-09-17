@@ -6,7 +6,7 @@
 #    By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 17:07:24 by lbastien          #+#    #+#              #
-#    Updated: 2024/09/17 00:55:12 by lbastien         ###   ########.fr        #
+#    Updated: 2024/09/17 01:31:51 by lbastien         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,10 +15,10 @@ CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 # Target executable name
-TARGET = Span
+TARGET = Mutated
 
 # Source, Object, Dependency files
-SRC = main.cpp Span.cpp
+SRC = main.cpp
 OBJ = $(SRC:.cpp=.o)
 DEP = $(OBJ:.o=.d)
 

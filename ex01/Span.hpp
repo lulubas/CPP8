@@ -6,19 +6,25 @@
 /*   By: lbastien <lbastien@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/16 16:27:47 by lbastien          #+#    #+#             */
-/*   Updated: 2024/09/16 18:01:17 by lbastien         ###   ########.fr       */
+/*   Updated: 2024/09/17 01:04:10 by lbastien         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// Span.hpp
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
 #include<string>
 #include<iostream>
+#include<vector>
+#include<algorithm>
+#include<numeric>
 
 class Span {
     private:
+        
+        unsigned int        _maxSize;
+        std::vector<int>    _intList;
+        
     public:
         Span();
         Span(unsigned int N);
@@ -26,32 +32,19 @@ class Span {
         Span& operator=(const Span &other);
         ~Span();
 
-        addNumber
+        void addNumber(int newInt);
+        void addRange(std::vector<int>::iterator begin, unsigned int size);
+        
+        int shortestSpan(void);
+        int longestSpan(void);
+        std::vector<int>& getVector(void); 
+
+    
+    class MaxSizeReached : public std::exception {
+        public:
+            const char *what() const throw();
+    };
+        
 };
 
 #endif
-
-// Span.cpp
-#include "Span.hpp"
-
-Span::Span() {
-    std::cout << "Span default constructor called" << std::endl;
-}
-
-Span::Span(std::string& type) {
-    std::cout << "Span parameterized constructor called" << std::endl;
-}
-
-Span::Span(const Span& other) {
-    std::cout << "Span copy constructor called" << std::endl;
-}
-
-Span& Span::operator=(const Span &other) {
-    std::cout << "Span copy assignement operator called" << std::endl;
-    if (this != &other) {}
-    return *this;
-}
-
-Span::~Span(){
-    std::cout << "Span destructor called" << std::endl;
-}
