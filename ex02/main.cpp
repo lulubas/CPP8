@@ -44,7 +44,7 @@ int main()
     ++itl;
     --itel;
 
-    std::cout << "Ranged content of MutantStack: ";
+    std::cout << "Inverted ranged content of MutantStack: ";
     while (it != ite)
     {
         std::cout << *it << " ";
